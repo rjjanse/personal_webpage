@@ -1,0 +1,193 @@
+/* Set landing */
+body {
+    background-image: url("https://rjansephotography.weebly.com/uploads/9/4/6/4/94648538/rep-0043_1_orig.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    font-family: "Phudu", Helvetica, sans-serif;
+}
+
+/* Navigation bar */
+#navbar {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.811);
+    padding: 0 5px 0 10px;
+}
+
+/* Navigation bar base state */
+.base {
+    width: 2vw;
+    min-width: 30px;
+}
+
+/* Navigation bar closed state */
+.closed {
+    width: 2vw;
+    min-width: 30px;
+    -webkit-animation-name: animateleft-close;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animateleft-close;
+    animation-duration: 0.4s;
+}
+
+/* Navigation bar open state */
+.open {
+    width: 20vw;
+    min-width: 300px;
+    -webkit-animation-name: animateleft-open;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animateleft-open;
+    animation-duration: 0.4s;
+}
+
+/* Button for opening navbar */
+#open-navbar {
+    float: right;
+    font-size: 2.5em;
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 1s;
+    animation-name: rotate;
+    animation-duration: 1s;
+}
+
+/* Hover effect for opening button */
+#open-navbar:hover {
+    font-weight: bolder;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+/* Button for closing navbar */
+#close-navbar {
+    float: right;
+    font-size: 2.5em;
+    display: none;
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 1s;
+    animation-name: rotate;
+    animation-duration: 1s;
+}
+
+/* Hover effect for closing button */
+#close-navbar:hover {
+    font-weight: bolder;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+/* Animation effect for opening navbar */
+@-webkit-keyframes animateleft-open {
+    from {width: 2vw; min-width: 30px}
+    to {width: 20vw; min-width: 300px}
+}
+
+@keyframes animateleft-open {
+    from {width: 2vw; min-width: 30px}
+    to {width: 20vw; min-width: 300px}
+}
+
+/* Animation effect for closening navbar */
+@-webkit-keyframes animateleft-close {
+    from {width: 20vw; min-width: 300px}
+    to {width: 2vw; min-width: 30px}
+}
+
+@keyframes animateleft-close {
+    from {width: 20vw; min-width: 300px}
+    to {width: 2vw; min-width: 30px}
+}
+
+/* Animation effect for rotating open/close button */
+@-webkit-keyframes rotate {
+    from {transform: rotateY(0deg)}
+    to {transform: rotateY(360deg)}
+}
+
+@keyframes rotate {
+    from {transform: rotateY(0deg)}
+    to {transform: rotateY(360deg)}
+}
+
+/* Navigation box styling */
+#navbar nav {
+    padding: 20px;
+    line-height: 1.5em;
+    font-size: 1.4em;
+}
+
+/* Navigation links styling */
+#navbar nav a {
+    color: black;
+}
+
+/* Navigation links hidden without animation on page load */
+#navbar[class = "base"] nav {
+    display: none;
+}
+
+/* Navigation links hidden when navbar is closed*/
+#navbar[class = "closed"] nav {
+    position: relative;
+    left: -300px;
+    -webkit-animation-name: close-nav-items;
+    -webkit-animation-duration: 0.4s;
+    animation-name: close-nav-items;
+    animation-duration: 0.4s;
+}
+
+/* Navigation links shown when navbar is open*/
+#navbar[class = "open"] nav {
+    position: fixed;
+    left: 0;
+    -webkit-animation-name: open-nav-items;
+    -webkit-animation-duration: 0.4s;
+    animation-name: open-nav-items;
+    animation-duration: 0.4s;
+}
+
+/* Add animation for opening navigation items */
+@-webkit-keyframes open-nav-items {
+    from {left: -300px}
+    to {left: 0}
+}
+
+@keyframes open-nav-items {
+    from {left: -300px}
+    to {left: 0}
+}
+
+/* Add animation for closing navigation items */
+@-webkit-keyframes close-nav-items {
+    from {left: -20px}
+    to {left: -300px}
+}
+
+@keyframes close-nav-items {
+    from {left: -20px}
+    to {left: -300px}
+}
+
+/* Page title */
+#title-wrapper {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* Change h1 style */
+h1 {
+    color: white;
+    font-weight: bolder;
+    font-size: 5.5em;
+}

@@ -1,0 +1,283 @@
+/* Body styling */
+body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: "Phudu", Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Header styling */
+header {
+    background-color: black;
+    color: white;
+    font-size: 2em;
+}
+
+/* Style heading text */
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
+/* Image gallery styling */
+#album-gallery {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* Album button wrappers */
+.album-button {
+    background-repeat: none;
+    background-size: cover;
+    width: 50vw;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-button[name = "2023"] {
+    background-image: url("C:/Users/rjjan/Onedrive/Documents/Personal projects/photography_website/images/2019/20191008-4.jpg");
+}
+
+.album-button[name = "2022"] {
+    background-image: url("C:/Users/rjjan/Onedrive/Documents/Personal projects/photography_website/images/2018/20181003-5.jpg");
+}
+
+.album-button[name = "2021"] {
+    background-image: url("C:/Users/rjjan/Onedrive/Documents/Personal projects/photography_website/images/2021/20211206-7.JPG");
+}
+
+.album-button[name = "2020"] {
+    background-image: url("C:/Users/rjjan/Onedrive/Documents/Personal projects/photography_website/images/2018/20181003-5.jpg");
+}
+
+.album-button[name = "2019"] {
+    background-image: url("C:/Users/rjjan/Onedrive/Documents/Personal projects/photography_website/images/2019/20191008-4.jpg");
+}
+
+.album-button[name = "2018"] {
+    background-image: url("C:/Users/rjjan/Onedrive/Documents/Personal projects/photography_website/images/2018/20181003-6.jpg");
+}
+
+/* Effect when hovering over album button */
+.album-button:hover {
+    transform: scale(1.025);
+    z-index: 10;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+/* Album button cover text */
+a {
+    font-size: 3.5em;
+    background-color: rgba(255, 255, 255, 0.575);
+    margin: 0;
+    padding: 5px;
+}
+
+/* Album wrapper at page load */
+.album[name = ""] {
+    display: none;
+    margin: 0;
+}
+
+/* Album wrapper */
+.album[name = "shown"] {
+    position: absolute;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px 0 50px 0;
+    -webkit-animation-name: album-appear;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: album-appear;
+    animation-duration: 0.5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Animation for album wrapper appear */
+@-webkit-keyframes album-appear {
+    from{top: 200vh}
+    to{top: 2em}
+}
+
+@keyframes album-appear {
+    from{top: 200vh}
+    to{top: 2em}
+}
+
+/* Upon hiding album */
+.album[name = "hidden"] {
+    position: absolute;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px 0 50px 0;
+    -webkit-animation-name: album-disappear;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: album-disappear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Animation for album wrapper disappear */
+@-webkit-keyframes album-disappear {
+    from{top: 2em}
+    to{top: 200vh}
+}
+
+@keyframes album-disappear {
+    from{top: 2em}
+    to{top: 200vh}
+}
+
+/* Close button when page is loaded */
+#close-button[name = ""] {
+    font-size: 0em;
+    text-align: center;
+    display: none;
+}
+
+/* Close button when album is hidden */
+#close-button[name = "hidden"] {
+    font-size: 0em;
+    text-align: center;
+    display: none;
+}
+
+/* Close button when album is shown */
+#close-button[name = "shown"] {
+    font-size: 3em;
+    text-align: center;
+}
+
+/* Hover effect close button */
+#close-button:hover {
+    font-weight: bolder;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+/* Gallery title */
+h2 {
+    font-size: 3em;
+    text-align: center;
+}
+
+/* Gallery wrapper */
+.gallery {
+    display: none;
+    text-align: center;
+}
+
+/* Gallery */
+.album section div {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 5vh 10vw 5vh 10vw;
+    justify-content: space-between;
+}
+
+/* Limit image height in gallery */
+.album section div img {
+    height: 40vh;
+}
+
+/* Hidden album gallery left column */
+#left-column[name = "hidden"] {
+    position: relative;
+    left: -50vw;
+    -webkit-animation-name: hide-album-gallery-left;
+    -webkit-animation-duration: 1s;
+    animation-name: hide-album-gallery-left;
+    animation-duration: 1s;
+}
+
+/* Hidden album gallery left column animation */
+@-webkit-keyframes hide-album-gallery-left {
+    from{left: 0}
+    to{left: -50vw}
+}
+
+@keyframes hide-album-gallery-left {
+    from{left: 0}
+    to{left: -50vw}
+}
+
+/* Hidden album gallery right column */
+#right-column[name = "hidden"] {
+    position: relative;
+    right: -50vw;
+    -webkit-animation-name: hide-album-gallery-right;
+    -webkit-animation-duration: 1s;
+    animation-name: hide-album-gallery-right;
+    animation-duration: 1s;
+}
+
+/* Hidden album gallery right column animation */
+@-webkit-keyframes hide-album-gallery-right {
+    from{right: 0}
+    to{right: -50vw}
+}
+
+@keyframes hide-album-gallery-right {
+    from{right: 0}
+    to{right: -50vw}
+}
+
+/* Shown album gallery left column */
+#left-column[name = "shown"] {
+    position: relative;
+    left: -50vw;
+    -webkit-animation-name: show-album-gallery-left;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0.5ss;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: show-album-gallery-left;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+/* Show album gallery left column animation */
+@-webkit-keyframes show-album-gallery-left {
+    from{left: -50vw}
+    to{left: 0}
+}
+
+@keyframes show-album-gallery-left {
+    from{left: -50vw}
+    to{left: 0}
+}
+
+/* Shown album gallery right column */
+#right-column[name = "shown"] {
+    position: relative;
+    right: -50vw;
+    -webkit-animation-name: shown-album-gallery-right;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-name: shown-album-gallery-right;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+/* Shown album gallery right column animation */
+@-webkit-keyframes shown-album-gallery-right {
+    from{right: -50vw}
+    to{right: 0}
+}
+
+@keyframes shown-album-gallery-right {
+    from{right: -50vw}
+    to{right: 0}
+}

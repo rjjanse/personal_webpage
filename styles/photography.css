@@ -163,32 +163,6 @@ a {
     transition-duration: 0.5s;
 }
 
-/* Gallery title */
-h2 {
-    font-size: 3em;
-    text-align: center;
-}
-
-/* Gallery wrapper */
-.gallery {
-    display: none;
-    text-align: center;
-}
-
-/* Gallery */
-.album section div {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 0;
-    padding: 5vh 10vw 5vh 10vw;
-    justify-content: space-between;
-}
-
-/* Limit image height in gallery */
-.album section div img {
-    height: 40vh;
-}
-
 /* Hidden album gallery left column */
 #left-column[name = "hidden"] {
     position: relative;
@@ -280,4 +254,54 @@ h2 {
 @keyframes shown-album-gallery-right {
     from{right: -50vw}
     to{right: 0}
+}
+
+/* Gallery title */
+h2 {
+    font-size: 3em;
+    text-align: center;
+}
+
+/* Gallery wrapper */
+.gallery {
+    display: none;
+    text-align: center;
+}
+
+/* Gallery images wrapper */
+.gallery-images {
+    display: block;
+    left: 50%;
+    width: 100vw;
+}
+
+/* Showcased image wrapper */
+.showcase-image {
+    height: 50vh;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Scrollbar */
+.scrollbar {
+    width: 70vw;
+    display: flex;
+    padding: 0;
+    margin: 0 15vw;
+    justify-content: center;
+    overflow-x: scroll;
+}
+
+/* Add styling to scrollbar */
+.scrollbar img {
+    margin: 2px;
+    width: 10vw;
+    height: 10vw;
+    object-fit: cover;
+}
+
+/* Effect upon hover */
+.scrollbar img:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
 }
